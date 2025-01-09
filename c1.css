@@ -1,0 +1,29 @@
+table { 
+    border: 2px solid black;
+    padding: 5px;
+    background-color: black;
+}
+
+th,td{
+    padding: 10px;
+    border: 1px whitesmoke;
+    text-align: center;
+    background-color:  rgb(48, 48, 48);
+    color: black;
+}
+
+#screen {
+    height: 40px;
+    background-color: rgb(92, 85, 85);
+    color: whitesmoke;
+    border-color: black;
+}
+
+body{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color:  whitesmoke;}
