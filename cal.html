@@ -1,0 +1,88 @@
+<!--Joel K Mathews -->
+<!--23112009-->
+<!--08/01/2025-->
+<!--Creating a calculator in html -->
+<!--Purpose - Making a calculator -->
+<!--Working - can calculate addition-->
+<!--Learnng - learned about tables and script -->
+<!DOCTYPE html>
+<hmtl>
+
+    <head>
+        <title>Calculator</title>
+    </head>
+    <link rel="stylesheet" href="c1.css">
+
+    <body>
+
+        <table>
+            <tr>
+                <td colspan="4" id="screen"></td>
+            </tr>
+            <tr>
+                <td onclick="clickHandler('7')">7</td>
+                <td onclick="clickHandler('8')">8</td>
+                <td onclick="clickHandler('9')">9</td>
+                <td onclick="clickHandler('*')">*</td>
+            </tr>
+            <tr>
+                <td onclick="clickHandler('4')">4</td>
+                <td onclick="clickHandler('5')">5</td>
+                <td onclick="clickHandler('6')">6</td>
+                <td onclick="clickHandler('-')">-</td>
+            </tr>
+            <tr>
+                <td onclick="clickHandler('1')">1</td>
+                <td onclick="clickHandler('2')">2</td>
+                <td onclick="clickHandler('3')">3</td>
+                <td onclick="clickHandler('+')">+</td>
+            </tr>
+            <tr>
+                <td onclick="clickHandler('/')">/</td>
+                <td onclick="clickHandler('0')">0</td>
+                <td onclick="clickclear()">C</td>
+                <td onclick="clickEvaluate()">=</td>
+            </tr>
+        </table>
+
+        <script>
+            console.log("Hello world");
+
+            function clickHandler(value) {
+                console.log("Button clicked " + value);
+
+                if (value == '+' || value == '-' || value == '*' || value == '/') {
+                    value = " " + value + " ";
+                }
+
+                var screenContent = document.getElementById("screen");
+                screenContent.innerHTML = screenContent.innerHTML + value;
+            }
+
+            function clickEvaluate() {
+                console.log("Evaluate clicked");
+
+                var expression = document.getElementById("screen").innerHTML;
+                console.log("Expression: " + expression);
+
+                var expressionArray = expression.split(" ");
+                console.log("Expression Array: " + expressionArray);
+
+                var result = 0;
+                if (expressionArray[1] == '+') {
+                    result = parseInt(expressionArray[0]) + parseInt(expressionArray[2]);
+                }
+                document.getElementById("screen").innerHTML = result;
+
+            }
+            function clickclear(){
+                console.log("click clear");
+                var screenContent = document.getElementById("screen").innerHTML;
+                screenContent.innerHTML = "";
+            
+            }
+
+
+        </script>
+    </body>
+</hmtl>
